@@ -130,3 +130,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+<<<<<<< HEAD
+=======
+config2.py
+>>>>>>> 0ad2982bdd5af4cb810bdab2b061078e04f63fea
