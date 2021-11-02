@@ -131,3 +131,5 @@ dmypy.json
 .pyre/
 
 myconfig.py
+.DS_Store
+__pycache__
