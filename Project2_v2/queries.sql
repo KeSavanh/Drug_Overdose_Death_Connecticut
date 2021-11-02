@@ -1,0 +1,1 @@
+SELECT * FROM drug_type;
