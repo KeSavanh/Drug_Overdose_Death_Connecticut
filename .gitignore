@@ -130,4 +130,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-config2.py
+myconfig.py
+.DS_Store
+__pycache__
