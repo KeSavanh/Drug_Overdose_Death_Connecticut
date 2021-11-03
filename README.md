@@ -49,6 +49,6 @@ Our main sources :
 
 - Tamasree Sinha
 - Hima
-- Laksmi P
+- Lekshmi Prabha
 - Vilaysack Khonsavanh
 
