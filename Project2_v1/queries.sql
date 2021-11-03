@@ -49,11 +49,38 @@ SELECT county, "Total deaths", "Average population", ("Total deaths"/"Average po
 FROM "county_population"
 ORDER BY "Death rate";
 
--------  7. 
+-------  7. Drug use base on sex
+SELECT sex,
+SUM(CAST (heroin AS INTEGER))as heroin_cnt ,
+SUM(CAST (fentanyl AS INTEGER))as fentanyl_cnt,
+SUM(CAST(cocaine AS integer)) as cocaine_cnt,
+SUM(CAST(ethanol as integer)) as ethan_cnt,
+SUM(CAST(benzodiazepine as integer)) as benzo_cnt
+from
+drug_master 
+group by sex ;
+-------- 9. Drug use base on race
+SELECT race,
+SUM(CAST (heroin AS INTEGER))as heroin_cnt ,
+SUM(CAST (fentanyl AS INTEGER))as fentanyl_cnt,
+SUM(CAST(cocaine AS integer)) as cocaine_cnt,
+SUM(CAST(ethanol as integer)) as ethan_cnt,
+SUM(CAST(benzodiazepine as integer)) as benzo_cnt
+from
+drug_master 
+group by race
+ORDER BY heroin_cnt DESC;
 
-
-
-																				   
+----- 8. Most drug use 
+CREATE VIEW "most_drug" AS
+SELECT 
+SUM(CAST (heroin AS INTEGER))as heroin_cnt ,
+SUM(CAST (fentanyl AS INTEGER))as fentanyl_cnt,
+SUM(CAST(cocaine AS integer)) as cocaine_cnt,
+SUM(CAST(ethanol as integer)) as ethan_cnt,
+SUM(CAST(benzodiazepine as integer)) as benzo_cnt
+from
+drug_master ;																				   
 																												   
 																												   
 																												   
