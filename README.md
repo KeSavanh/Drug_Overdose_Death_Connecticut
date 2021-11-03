@@ -45,11 +45,11 @@ Our main sources :
 
 - Drug table
 
-- ![p2](images/product3.png)
+![p2](images/product3.png)
 
 - Drug master table
 
-- ![p2](images/product2.png)
+![p2](images/product2.png)
 
 ### Aggregate
 
