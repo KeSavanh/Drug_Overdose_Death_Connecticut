@@ -45,4 +45,10 @@ Our main sources :
 
 ### Aggregate
 
+### Team member
+
+- Tamasree Sinha
+- Hima
+- Laksmi P
+- Vilaysack Khonsavanh
 
