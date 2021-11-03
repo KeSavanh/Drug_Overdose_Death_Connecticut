@@ -3,7 +3,7 @@ SELECT * FROM census_ct;
 
 
 -- 1. Total accident from 2015 to 2020?
-SELECT year, COUNT(manner_of_death) AS "Total death"
+SELECT year, COUNT(id) AS "Total death"
 FROM drug_type
 GROUP BY year
 ORDER by year DESC; 
@@ -29,7 +29,8 @@ ORDER BY "Total deaths" DESC;
 SELECT age, COUNT(id) AS "Total deaths"
 FROM drug_type
 GROUP BY age
-ORDER BY age ASC;
+ORDER BY "Total deaths" DESC
+LIMIT 10;
 
 -- 6. Death rate per county 
 CREATE view "county_death" AS 																											   
@@ -45,27 +46,29 @@ select county, SUM(total_death) AS "Total deaths", AVG(total_population) AS "Ave
 from "total_county_death"
 group by county;
 
+SELECT * FROM "county_population";
+
 SELECT county, "Total deaths", "Average population", ("Total deaths"/"Average population") AS "Death rate"
 FROM "county_population"
 ORDER BY "Death rate";
 
 -------  7. Drug use base on sex
 SELECT sex,
-SUM(CAST (heroin AS INTEGER))as heroin_cnt ,
-SUM(CAST (fentanyl AS INTEGER))as fentanyl_cnt,
-SUM(CAST(cocaine AS integer)) as cocaine_cnt,
-SUM(CAST(ethanol as integer)) as ethan_cnt,
-SUM(CAST(benzodiazepine as integer)) as benzo_cnt
+SUM(heroin)as heroin_cnt ,
+SUM(fentanyl)as fentanyl_cnt,
+SUM(cocaine) as cocaine_cnt,
+SUM(ethanol) as ethan_cnt,
+SUM(benzodiazepine) as benzo_cnt
 from
 drug_master 
 group by sex ;
 -------- 9. Drug use base on race
 SELECT race,
-SUM(CAST (heroin AS INTEGER))as heroin_cnt ,
-SUM(CAST (fentanyl AS INTEGER))as fentanyl_cnt,
-SUM(CAST(cocaine AS integer)) as cocaine_cnt,
-SUM(CAST(ethanol as integer)) as ethan_cnt,
-SUM(CAST(benzodiazepine as integer)) as benzo_cnt
+SUM(heroin)as heroin_cnt ,
+SUM(fentanyl)as fentanyl_cnt,
+SUM(cocaine) as cocaine_cnt,
+SUM(ethanol) as ethan_cnt,
+SUM(benzodiazepine) as benzo_cnt
 from
 drug_master 
 group by race
@@ -74,11 +77,11 @@ ORDER BY heroin_cnt DESC;
 ----- 8. Most drug use 
 CREATE VIEW "most_drug" AS
 SELECT 
-SUM(CAST (heroin AS INTEGER))as heroin_cnt ,
-SUM(CAST (fentanyl AS INTEGER))as fentanyl_cnt,
-SUM(CAST(cocaine AS integer)) as cocaine_cnt,
-SUM(CAST(ethanol as integer)) as ethan_cnt,
-SUM(CAST(benzodiazepine as integer)) as benzo_cnt
+SUM(heroin)as heroin_cnt ,
+SUM(fentanyl)as fentanyl_cnt,
+SUM(cocaine) as cocaine_cnt,
+SUM(ethanol) as ethan_cnt,
+SUM(benzodiazepine) as benzo_cnt
 from
 drug_master ;																				   
 																												   
